@@ -35,7 +35,7 @@ func newStore(f *os.File)(*store, error) {
 	}, nil
 }
 
-func (s *store)append(p []byte)(n uint64, pos uint64, err error) {
+func (s *store)Append(p []byte)(n uint64, pos uint64, err error) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	pos = s.size
